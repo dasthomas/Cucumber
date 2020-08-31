@@ -20,7 +20,7 @@ public class Background {
 	@Given("^Open the Application$")
     public void open_the_application() throws Throwable {
 
-		WebDriverManager.chromedriver().setup();
+	WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

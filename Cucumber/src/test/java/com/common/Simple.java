@@ -4,33 +4,25 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Simple {
-
+	static int count=0;
 	
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
-		DecimalFormat f = new DecimalFormat("##.00");
-		System.out.println("Enter the no of liters to fill the tank");
-		int c = sc.nextInt();
-		if(c <= 0)
-		{
-		    System.out.println(c + " is an Invalid Input");
-		    System.exit(0);
-		}
-		System.out.println("Enter the distance covered");
-		int d = sc.nextInt();
-		if(d <=0)
-		{
-		    System.out.println(d + " is an Invalid Input");
-		    System.exit(0);
-		}
+		int totaldigit=sc.nextInt();
+		int countdigit=sc.nextInt();
 		
 		
-		    
-		    double x = (c/d)*100;
-		    double y = d * 0.6214;
-		    double z = c*0.2642;
-		    double w = y/z;
-		    System.out.println("Liters/100KM\n" +f.format(x));
-		    System.out.println("Miles/gallons\n" +f.format(w));
-	}
+
+         String to=Integer.toString(totaldigit);
+         char[] ch=to.toCharArray();
+         String num=Integer.toString(countdigit);
+         char[] change=num.toCharArray();
+         for(int i=0;i<=num.length()-1;i++) {
+        	 if(String.valueOf(change[i]).contains(to)) {
+        		 count++;
+        	 }
+         }
+        System.out.println("Number of digits: " + count);
+    }
+
 }
